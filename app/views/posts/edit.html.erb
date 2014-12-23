@@ -1,0 +1,10 @@
+<% provide(:title, 'Edit post') %>
+
+<div class="row">
+  <% if flash[:error] %>
+    <div class="page-header">
+      <h1>Editing post: <small>"<%= @post.post_title %>"</small></h1>
+    </div>
+  <% end %>
+  <%= render 'edit_post_form' %>
+</div>

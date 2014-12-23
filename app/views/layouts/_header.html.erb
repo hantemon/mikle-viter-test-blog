@@ -1,0 +1,19 @@
+<nav class="navbar navbar-inverse" role="navigation">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header content-heading clearfix media">
+      <%= link_to image_tag("logo.jpg", size: "50x50", :alt => "Home"), root_path, class: "pull-left" %>
+      <%= content_tag(:h3, "Mikle Viter's portfolio blog", class:"text-nowrap", id:"logotxt") %>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9">
+      <ul class="nav navbar-nav pull-right">
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "Help", help_path %></li>
+        <li><%= link_to "About me", about_path %></li>
+        <li><%= link_to "Contact me", contact_path %></li>
+      </ul>
+    </div>
+  </div>
+</nav>
