@@ -1,8 +1,11 @@
 class PostsController < ApplicationController
   #before_action :check_fields, only: [:create]
 
+  @@sorting = 'created_at DESC'
+  @@per_page = 15
+
   def index
-    @posts = Post.paginate(page: params[:page], :per_page => 15).order('created_at DESC')
+    @posts = Post.paginate(page: params[:page], per_page: @@per_page).order(@@sorting)
   end
 
   def new
@@ -41,6 +44,16 @@ class PostsController < ApplicationController
     Post.find(params[:id]).destroy
     flash[:success] = "Post deleted."
     redirect_to posts_url
+  end
+
+  def search
+    if params[:query]
+      @posts = Post.make_search(params[:query]).paginate(page: params[:page], per_page: @@per_page).order(@@sorting)
+    else
+      index
+    end
+    #@posts = Post.make_search(params[:query])
+    render "index"
   end
 
   def help
