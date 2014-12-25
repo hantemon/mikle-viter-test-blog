@@ -1,12 +1,20 @@
-<% provide(:title, "About me - Mikle Viter") %>
+<% provide(:title, "Contacte me - Mikle Viter") %>
 <div class="row">
   <div class="col-md-4">
-    <p><strong>Contacts:</strong></p>
-    <ul>
+    <p class="mv_contacts_p"><strong>Contacts:</strong></p>
+    <ul class="mv_contacts_ul">
       <li>City: Sevastopol, Russian Federation</li>
       <li>Phone: +7 (978) 747-93-43</li>
-      <li>e-mail: mikle.viter@gmail.com</li>
-      <li>skype: mikle.viter</li>
+      <li>
+        Email me:
+        <%= mail_to @email do %>
+           <span><%= @email %></span>
+        <% end %>
+      </li>
+      <li>
+        Skype: <%= @skype_user_name %>
+        <%= render 'layouts/skype' %>
+      </li>
     </ul>
   </div>
   <div class="col-md-8">
@@ -14,9 +22,12 @@
   </div>
 </div>
 
-<% content_for :javascripts do %>
-  <%= render 'layouts/gmaps4rails' %>
-  <script type='text/javascript'>
-    $(document).on('page:load', gmap_show(44.5833,33.5167));
-  </script>
+<% if params[:action] == "contact" %>
+  <% content_for :javascripts do %>
+    <%= render 'layouts/gmaps4rails' %>
+    <script type='text/javascript'>
+      //$(document).on('page:load', gmap_show(44.5833,33.5167));
+      $(document).ready(function() { gmap_show(44.5833,33.5167); });
+    </script>
+  <% end %>
 <% end %>

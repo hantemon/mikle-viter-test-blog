@@ -63,6 +63,8 @@ class PostsController < ApplicationController
   end
 
   def contact
+    @skype_user_name = "mikle.viter"
+    @email  = "mikle.viter@gmail.com"
   end
 
   private

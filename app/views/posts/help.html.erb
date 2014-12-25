@@ -1,1 +1,15 @@
 <% provide(:title, "What is this application?") %>
+
+<div class="row">
+  <h1>So, what is this application about?</h1>
+  <p>It's a simple blog with one user, written whithout any scaffolding. In a model there is a "user_id", "post_title", "post_content", "timestamp" fields. By the way, we can do not use "user_id" field at all for current blog version, and generate a database migration like <code>"rails generate migration add_user_id_to_posts user_id:integer"</code> when more than one user needed.</p>
+  <p>The application implements the MVC software architectural pattern.</p>
+  <p>This application uses Twitter BootStrap for styling.</p>
+  <p>For generating posts Faker gem was used.</p>
+  <p>For Google Maps "gmaps4rails" gem was used.</p>
+  <p>All classes are named by <mark>Rails Naming Convention</mark>.</p>
+  <p>Application's paths are based on <mark>resources :posts</mark> routing. Other paths like "/contact" are based on match method.</p>
+  <p>Application validates data when creating posts. It is based on Model's directive <code>validates</code>.</p>
+  <p>There is a simple search tool, that displays only on home page (where posts are displayed). When pressing a search button, the fuction <code>make_search</code> from Model is called.</p>
+  <p>A code is refactored by different partials</p>
+</div>
