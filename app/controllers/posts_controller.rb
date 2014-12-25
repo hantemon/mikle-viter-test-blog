@@ -47,13 +47,12 @@ class PostsController < ApplicationController
   end
 
   def search
-    if params[:query]
+    if params[:query] && !params[:query].to_s.strip.empty?
       @posts = Post.make_search(params[:query]).paginate(page: params[:page], per_page: @@per_page).order(@@sorting)
+      render "index"
     else
-      index
+      redirect_to root_url
     end
-    #@posts = Post.make_search(params[:query])
-    render "index"
   end
 
   def help
