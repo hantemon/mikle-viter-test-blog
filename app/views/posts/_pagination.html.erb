@@ -1,0 +1,6 @@
+<table>
+  <tr>
+    <td class="td_pagination"><%= will_paginate @posts, renderer: BootstrapPagination::Rails %></td>
+    <td><%= select_tag :per_page, options_for_select(@per_page_nums, @per_page), class: 'form-control', :onchange => "window.location.replace('#{params[:action]=='search' ? search_path : root_path}?per_page='+this.value+'#{@query}');" %></td>
+  </tr>
+</table>

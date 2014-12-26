@@ -11,11 +11,11 @@
     <%= page_entries_info @posts %>
   </div>
   <div>
-    <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+    <%= render 'pagination' %>
   </div>
   <%= render @posts %>
   <div>
-    <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+    <%= render 'pagination' %>
   </div>
 <% else %>
   <h1>Click link below to create your first post</h1>

@@ -22,11 +22,9 @@
   </div>
 </div>
 
-<% if params[:action] == "contact" %>
-  <% content_for :javascripts do %>
-    <script type='text/javascript'>
-      $(document).on('page:load', gmap_show(44.5833,33.5167));
-      //$(document).ready(function() { gmap_show(44.5833,33.5167); });
-    </script>
-  <% end %>
+<% content_for :javascripts do %>
+  <script type='text/javascript'>
+    $(document).on('page:load', gmap_show(44.5833,33.5167));
+    //$(document).ready(function() { gmap_show(44.5833,33.5167); });
+  </script>
 <% end %>

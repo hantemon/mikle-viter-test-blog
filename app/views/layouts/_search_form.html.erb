@@ -1,5 +1,6 @@
 <div class="search">
 <%= form_tag search_path, method: :get, :class => "form-inline" do %>
+    <input type="hidden" name="per_page" id="per_page" value="<%= params[:per_page].nil? ? @def_per_page : @per_page %>" />
     <%= text_field_tag :query, params[:query] %>
     <%= submit_tag "Search", name: nil, class: "btn btn-default" %>   
 <% end %>
