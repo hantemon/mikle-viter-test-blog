@@ -1,0 +1,1 @@
+function gmap_show(e,n){return null==e||null==n?0:(handler=Gmaps.build("Google"),void handler.buildMap({provider:{},internal:{id:"map"}},function(){markers=handler.addMarkers([{lat:e,lng:n,picture:{url:"/assets/orange-dot.png",width:32,height:32},infowindow:"I live here"}]),handler.bounds.extendWith(markers),handler.fitMapToBounds(),handler.getMap().setZoom(5)}))}
